@@ -22,7 +22,7 @@ OxygenX:
   timeout: 6000
 
   # Threads for account checking
-  threads: 200
+  threads: 250
   
   # Remove all duplicates in combolist
   combo_duplicates: true
@@ -40,7 +40,7 @@ OxygenX:
   print_bad: true
   
   # Save bad accounts
-  save_bad: true
+  save_bad: false
 
   # Normal users should keep this false unless problem start happening
   debugging: false
@@ -84,13 +84,13 @@ OxygenX:
     # If remove bad proxies are on, once the proxy list hits the limit it will stop removing bad proxies
     proxy_remove_limit: 2000
     # If proxies be used for checking sfas (Will be slower but if false, you may get ip banned)
-    proxy_for_sfa: false
+    proxy_for_sfa: true
     # Sleep between checks if proxy mode is false (put 0 for no sleep) counted in secouds
     sleep_proxyless: 30
     
     api:
       # If proxy api link to be used.
-      use: false
+      use: true
       # If proxy_use_api is true, put api link in the parentheses
       api_link: "https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=3000"
       # If proxy_use_api is true, put a number for seconds to refresh the link (every number under 30 is for no refreshing time, recommend refresh time: 300 seconds aka 5 minutes)

@@ -194,14 +194,12 @@ class Main:
                             line = f'{email}:{password}'
                         else:
                             Counter.checked += 1
-                            Counter.bad += 1
                             self.prints(f'{red}[Badline] {blue}- {red}{line}')
                             self.writing([line, 'Badline'])
                             return
                         reply = self.checkname(email)
                         if not reply:
                             Counter.checked += 1
-                            Counter.bad += 1
                             if OxygenX.print_bad:
                                 self.prints(f'{red}[Bad] {blue}- {red}{line}')
                             if OxygenX.save_bad:
@@ -214,11 +212,8 @@ class Main:
                 answer = self.checkmc(user=email, passw=password)
                 Counter.checked += 1
                 if 'Invalid credentials' in answer:
-                    Counter.bad += 1
                     if OxygenX.print_bad:
                         self.prints(f'{red}[Bad] {blue}- {red}{line}')
-                    if OxygenX.save_bad:
-                        self.writing([line, 'Bad'])
                     return
                 texta = answer.text
                 if '[]' in texta:
@@ -365,7 +360,6 @@ class Main:
                 return
         else:
             Counter.checked += 1
-            Counter.bad += 1
             self.prints(f'{red}[Badline] {line}')
             self.writing([line, 'Badlines'])
             return
